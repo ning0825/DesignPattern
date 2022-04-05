@@ -11,21 +11,21 @@ public class FactoryMethod {
         VolvoCarProducer.produceCar("s90").printInfo();
     }
 
-//    /**
-//     * 简单工厂 - 实现方式一
-//     */
-//    private static class VolvoCarProducer{
-//        public static VolvoCar produceCar(String module){
-//            VolvoCar volvoCar = null;
-//            if ("s60".equalsIgnoreCase(module)){
-//                volvoCar = new S60Car();
-//            }
-//            if ("s90".equalsIgnoreCase(module)) {
-//                volvoCar = new S90Car();
-//            }
-//            return volvoCar;
-//        }
-//    }
+    // /**
+    // * 简单工厂 - 实现方式一
+    // */
+    // private static class VolvoCarProducer{
+    // public static VolvoCar produceCar(String module){
+    // VolvoCar volvoCar = null;
+    // if ("s60".equalsIgnoreCase(module)){
+    // volvoCar = new S60Car();
+    // }
+    // if ("s90".equalsIgnoreCase(module)) {
+    // volvoCar = new S90Car();
+    // }
+    // return volvoCar;
+    // }
+    // }
 
     /**
      * 简单工厂 - 实现方式二

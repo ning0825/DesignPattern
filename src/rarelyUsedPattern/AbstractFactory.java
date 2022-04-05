@@ -1,7 +1,7 @@
 package rarelyUsedPattern;
 
 public class AbstractFactory {
-    private interface IVolvoFactory{
+    private interface IVolvoFactory {
 
     }
 }
