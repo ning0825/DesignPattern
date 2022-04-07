@@ -3,8 +3,6 @@ package rarelyUsedPattern;
 import java.util.Scanner;
 import java.util.Stack;
 
-import javafx.scene.input.InputEvent;
-
 /**
  * 备忘录模式
  * 

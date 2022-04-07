@@ -1,7 +1,3 @@
-import com.sun.xml.internal.ws.wsdl.writer.document.soap.Body;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class ChainOfResponsibility {
@@ -13,14 +9,14 @@ public class ChainOfResponsibility {
         assemblyLine.startAssemble();
     }
 
-    private static class AssemblyLine{
+    private static class AssemblyLine {
         private Assembler head = null;
         private Assembler tail = null;
 
-        void addAssembler(Assembler assembler){
+        void addAssembler(Assembler assembler) {
             assembler.setNextAssembler(null);
 
-            if (head == null){
+            if (head == null) {
                 head = assembler;
                 tail = assembler;
                 return;
@@ -30,23 +26,23 @@ public class ChainOfResponsibility {
             tail = assembler;
         }
 
-        void startAssemble(){
-            if (head != null){
+        void startAssemble() {
+            if (head != null) {
                 head.assemble();
             }
         }
     }
 
-    private abstract static class Assembler{
+    private abstract static class Assembler {
         private Assembler nextAssembler;
 
-        public void setNextAssembler(Assembler nextAssembler){
+        public void setNextAssembler(Assembler nextAssembler) {
             this.nextAssembler = nextAssembler;
         }
 
-        public void assemble(){
+        public void assemble() {
             boolean stop = doAssemble();
-            if (!stop && nextAssembler != null){
+            if (!stop && nextAssembler != null) {
                 nextAssembler.assemble();
             }
         }
@@ -54,8 +50,8 @@ public class ChainOfResponsibility {
         public abstract boolean doAssemble();
     }
 
-    //车身
-    private static class BodyAssembler extends Assembler{
+    // 车身
+    private static class BodyAssembler extends Assembler {
         @Override
         public boolean doAssemble() {
             System.out.println("Body Assembly Finished!");
@@ -63,8 +59,8 @@ public class ChainOfResponsibility {
         }
     }
 
-    //内饰
-    private static class InteriorAssembler extends Assembler{
+    // 内饰
+    private static class InteriorAssembler extends Assembler {
         @Override
         public boolean doAssemble() {
             System.out.println("Interior Assembly Finished!");
@@ -75,8 +71,8 @@ public class ChainOfResponsibility {
         }
     }
 
-    //其他零件（最后一步）
-    private static class ComponentAssembler extends Assembler{
+    // 其他零件（最后一步）
+    private static class ComponentAssembler extends Assembler {
         @Override
         public boolean doAssemble() {
             System.out.println("Component Assembly Finished! The Car Is READY!");

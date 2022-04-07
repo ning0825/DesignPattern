@@ -3,7 +3,8 @@ import java.util.List;
 
 /**
  * 观察者模式(Observable-Observer)
- * 别的叫法：Subject-Observer, Publisher-Subscriber, Producer-Consumer, EvenEmitter-EventListener, Dispatcher-Listener
+ * 别的叫法：Subject-Observer, Publisher-Subscriber, Producer-Consumer,
+ * EvenEmitter-EventListener, Dispatcher-Listener
  *
  *
  */
@@ -33,7 +34,7 @@ public class Observer {
             agencies.add(agency);
         }
 
-        void removeAgency(IAgency agency){
+        void removeAgency(IAgency agency) {
             agencies.remove(agency);
         }
 
@@ -46,7 +47,7 @@ public class Observer {
 
     // 观察者（Observer）
     private interface IAgency {
-        //有新车发布，在店内布置广告
+        // 有新车发布，在店内布置广告
         void advertise(String module);
     }
 

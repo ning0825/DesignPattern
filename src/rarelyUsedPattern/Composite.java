@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javafx.print.PrinterAttributes;
-
 /**
  * 组合模式
  * 

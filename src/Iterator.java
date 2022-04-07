@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -15,24 +14,26 @@ public class Iterator {
         cars.add("S80");
 
         IIterator<String> iterator = new ArrayIterator(cars);
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.currentItem());
             iterator.next();
         }
     }
 
     // 迭代器接口
-    public interface IIterator<T>{
+    public interface IIterator<T> {
         boolean hasNext();
+
         T currentItem();
+
         void next();
     }
 
-    private static class ArrayIterator<T> implements IIterator<T>{
+    private static class ArrayIterator<T> implements IIterator<T> {
         private int cursor;
         private ArrayList<T> arrayList;
 
-        public ArrayIterator(ArrayList<T> arrayList){
+        public ArrayIterator(ArrayList<T> arrayList) {
             this.cursor = 0;
             this.arrayList = arrayList;
         }

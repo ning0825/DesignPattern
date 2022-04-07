@@ -1,7 +1,5 @@
 package rarelyUsedPattern;
 
-import javax.swing.text.ComponentView;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
