@@ -6,10 +6,11 @@
  * 2. 一个类存在两个（或多个）独立变化的纬度，通过组合的方式，让这两个（或多个）维度可以独立进行扩展。
  * 通过组合关系来替代继承关系，避免继承层次的指数级爆炸。
  * 
+ * 
  */
 public class Bridge {
     public static void main(String[] args) {
-        System.out.println("main");
+        
     }
 
     private enum NotificationEmergencyLevel {
@@ -82,6 +83,10 @@ public class Bridge {
         public void notify(String message) {
             msgSender.send(message);
         }
+    }
+
+    private static class ErrorAlertHandler{
+        
     }
 
 }
