@@ -4,7 +4,8 @@ import java.util.NoSuchElementException;
 /**
  * 迭代器模式（游标模式）
  *
- *
+ * ## 定义
+ * 提供一种方法顺序访问聚合对象中各个元素，而不暴露该对象的内部表示
  */
 public class Iterator {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class Iterator {
         cars.add("S90");
         cars.add("S80");
 
-        IIterator<String> iterator = new ArrayIterator(cars);
+        IIterator<String> iterator = new ArrayIterator<>(cars);
         while (iterator.hasNext()) {
             System.out.println(iterator.currentItem());
             iterator.next();

@@ -7,6 +7,12 @@ import java.util.Map;
  * 抽象工厂
  * 
  * 简单工厂和工厂方法都只能创建一种类型的对象，抽象工厂可以创建多个不同类型的对象
+ * 
+ * ## 定义
+ * 创建一系列相关对象，而无需指定其具体类
+ * 
+ * ## 应用场景
+ * 代码需要和多个不同系列的相关产品交互，无法预知相关信息，或处于未来扩展性的考虑
  */
 public class AbstractFactory {
     public static void main(String[] args) {

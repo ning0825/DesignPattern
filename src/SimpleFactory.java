@@ -3,6 +3,7 @@ import java.util.Map;
 
 /**
  * 工厂方法
+ * 
  */
 public class SimpleFactory {
     public static void main(String[] args) {

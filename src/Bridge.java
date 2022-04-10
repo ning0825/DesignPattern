@@ -10,7 +10,9 @@
  */
 public class Bridge {
     public static void main(String[] args) {
-        
+        ErrorAlertHandler errorAlertHandler = new ErrorAlertHandler(5,
+                new SevereNotification(new TelephoneMsgSender()));
+        errorAlertHandler.check(8);
     }
 
     private enum NotificationEmergencyLevel {
@@ -85,8 +87,20 @@ public class Bridge {
         }
     }
 
-    private static class ErrorAlertHandler{
-        
+    private static class ErrorAlertHandler {
+        private int maxCount;
+        private Notification notification;
+
+        public ErrorAlertHandler(int maxCount, Notification notification) {
+            this.maxCount = maxCount;
+            this.notification = notification;
+        }
+
+        public void check(int errorCount) {
+            if (errorCount > maxCount) {
+                notification.notify("error count: " + errorCount);
+            }
+        }
     }
 
 }

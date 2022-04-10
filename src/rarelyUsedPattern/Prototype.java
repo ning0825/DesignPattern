@@ -3,9 +3,11 @@ package rarelyUsedPattern;
 /**
  * 原型模式
  * 
+ * ## 定义
  * 原型模式将克隆过程委派给被克隆的对象
  * 
- * 
+ * ## 应用场景
+ * 对象创建成本大，但同一个类不同对象之间差别不大
  */
 public class Prototype {
     public static void main(String[] args) {

@@ -1,16 +1,30 @@
 /**
  * 单例模式
+ * 
+ * ## 定义
+ * 一个类只能创建一个对象
+ * 
+ * ## 应用场景
+ * 1. 处理资源访问冲突
+ * 2. 表示全局唯一类（如递增ID生成器）
+ * 
+ * ## 实现方式
+ * 1. 饿汉式
+ * 2. 懒汉式
+ * 3. 双重检测
+ * 4. 静态内部类
+ * 5. 枚举
  */
 public class Singleton {
     public static void main(String[] args) {
-//        // 枚举方式
-//        VolvoCorp volvoCorp = VolvoCorp.INSTANCE;
-//        volvoCorp.sellCar(10);
-//        System.out.println(volvoCorp.getCarNum());
-//
-//        VolvoCorp volvoCorp1 = VolvoCorp.INSTANCE;
-//        volvoCorp1.sellCar(20);
-//        System.out.println(volvoCorp1.getCarNum());
+        // // 枚举方式
+        // VolvoCorp volvoCorp = VolvoCorp.INSTANCE;
+        // volvoCorp.sellCar(10);
+        // System.out.println(volvoCorp.getCarNum());
+        //
+        // VolvoCorp volvoCorp1 = VolvoCorp.INSTANCE;
+        // volvoCorp1.sellCar(20);
+        // System.out.println(volvoCorp1.getCarNum());
 
         // 其他方式
         VolvoCorp volvoCorp = VolvoCorp.getInstance();
@@ -26,23 +40,24 @@ public class Singleton {
      * 懒汉式
      *
      * 支持延迟加载
-     * */
-    private static class VolvoCorp{
+     */
+    private static class VolvoCorp {
         private int carNum = 100;
 
         private static VolvoCorp instance;
 
-        private VolvoCorp(){};
+        private VolvoCorp() {
+        };
 
-        public void sellCar(int num){
+        public void sellCar(int num) {
             carNum -= num;
         }
 
-        public int getCarNum(){
+        public int getCarNum() {
             return carNum;
         }
 
-        public static VolvoCorp getInstance(){
+        public static VolvoCorp getInstance() {
             if (instance == null) {
                 instance = new VolvoCorp();
             }
@@ -55,83 +70,83 @@ public class Singleton {
      * 饿汉式
      *
      * 不支持延迟加载
-     * */
-//    public static class VolvoCorp{
-//        private int carNum = 100;
-//
-//        private static final VolvoCorp instance = new VolvoCorp();
-//
-//        private VolvoCorp(){}
-//
-//        public void sellCar(int num){
-//            carNum -= num;
-//        }
-//
-//        public int getCarNum(){
-//            return carNum;
-//        }
-//
-//        public static VolvoCorp getInstance(){
-//            return instance;
-//        }
-//    }
+     */
+    // public static class VolvoCorp{
+    // private int carNum = 100;
+    //
+    // private static final VolvoCorp instance = new VolvoCorp();
+    //
+    // private VolvoCorp(){}
+    //
+    // public void sellCar(int num){
+    // carNum -= num;
+    // }
+    //
+    // public int getCarNum(){
+    // return carNum;
+    // }
+    //
+    // public static VolvoCorp getInstance(){
+    // return instance;
+    // }
+    // }
 
     /**
      * 饿汉式
      *
      * 不支持延迟加载
-     * */
-//    public static class VolvoCorp{
-//        private int carNum = 100;
-//
-//        private static final VolvoCorp instance = new VolvoCorp();
-//
-//        private VolvoCorp(){}
-//
-//        public void sellCar(int num){
-//            carNum -= num;
-//        }
-//
-//        public int getCarNum(){
-//            return carNum;
-//        }
-//
-//        public static VolvoCorp getInstance(){
-//            return instance;
-//        }
-//    }
+     */
+    // public static class VolvoCorp{
+    // private int carNum = 100;
+    //
+    // private static final VolvoCorp instance = new VolvoCorp();
+    //
+    // private VolvoCorp(){}
+    //
+    // public void sellCar(int num){
+    // carNum -= num;
+    // }
+    //
+    // public int getCarNum(){
+    // return carNum;
+    // }
+    //
+    // public static VolvoCorp getInstance(){
+    // return instance;
+    // }
+    // }
 
     /**
      * 双重检测
      *
      * 支持懒加载，高并发
-     * */
-//    public static class VolvoCorp{
-//        private int carNum = 100;
-//        private static VolvoCorp instance;
-//
-//        private VolvoCorp(){}
-//
-//        public void sellCar(int num){
-//            carNum -= num;
-//        }
-//
-//        public int getCarNum(){
-//            return carNum;
-//        }
-//
-//        public static VolvoCorp getInstance(){
-//            if (instance == null){
-//                synchronized (VolvoCorp.class){
-//                    if (instance == null){
-//                        instance = new VolvoCorp();
-//                    }
-//                }
-//            }
-//
-//            return instance;
-//        }
-//    }
+     */
+    // public static class VolvoCorp{
+    // private int carNum = 100;
+    // private static VolvoCorp instance;
+    //
+    // private VolvoCorp(){}
+    //
+    // public void sellCar(int num){
+    // carNum -= num;
+    // }
+    //
+    // public int getCarNum(){
+    // return carNum;
+    // }
+    //
+    // public static VolvoCorp getInstance(){
+    // if (instance == null){
+    // synchronized (VolvoCorp.class){
+    // if (instance == null){
+    // instance = new VolvoCorp();
+    // }
+    // }
+    // }
+    //
+    // return instance;
+    // }
+    // }
 
     /**
      * 静态内部类
@@ -139,47 +154,46 @@ public class Singleton {
      * 调用 getInstance() 时，SingletonClass 才会被加载，instance 才会被创建
      * 既支持延迟加载，又支持高并发
      */
-//    public static class VolvoCorp {
-//        private int carNum = 100;
-//        private static VolvoCorp instance;
-//
-//        private VolvoCorp() {}
-//
-//        public void sellCar(int num) {
-//            carNum -= num;
-//        }
-//
-//        public int getCarNum() {
-//            return carNum;
-//        }
-//
-//        public static VolvoCorp getInstance(){
-//            return SingletonClass.volvoCorpInstance;
-//        }
-//
-//        private static class SingletonClass{
-//            private static final VolvoCorp volvoCorpInstance = new VolvoCorp();
-//        }
-//    }
+    // public static class VolvoCorp {
+    // private int carNum = 100;
+    // private static VolvoCorp instance;
+    //
+    // private VolvoCorp() {}
+    //
+    // public void sellCar(int num) {
+    // carNum -= num;
+    // }
+    //
+    // public int getCarNum() {
+    // return carNum;
+    // }
+    //
+    // public static VolvoCorp getInstance(){
+    // return SingletonClass.volvoCorpInstance;
+    // }
+    //
+    // private static class SingletonClass{
+    // private static final VolvoCorp volvoCorpInstance = new VolvoCorp();
+    // }
+    // }
 
     /**
      * 枚举类
      *
      * 利用枚举本身的特性保证线程安全性和实例唯一性
      */
-//    public enum VolvoCorp {
-//        INSTANCE;
-//
-//        private int carNum = 100;
-//
-//        public void sellCar(int num) {
-//            carNum -= num;
-//        }
-//
-//        public int getCarNum() {
-//            return carNum;
-//        }
-//    }
-
+    // public enum VolvoCorp {
+    // INSTANCE;
+    //
+    // private int carNum = 100;
+    //
+    // public void sellCar(int num) {
+    // carNum -= num;
+    // }
+    //
+    // public int getCarNum() {
+    // return carNum;
+    // }
+    // }
 
 }

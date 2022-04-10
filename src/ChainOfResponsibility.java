@@ -1,5 +1,15 @@
 import java.util.Random;
 
+/**
+ * 职责链模式（责任链模式）
+ * 
+ * ## 定义
+ * 将请求的发送和接收解耦，让多个对象都有机会接收这个请求。
+ * 将这些接收对象串成一条链，并沿着这条链传递这个请求，直到某个接收对象能够处理它为止。
+ * 
+ * ## 应用场景
+ * 过滤器，拦截器等
+ */
 public class ChainOfResponsibility {
     public static void main(String[] args) {
         AssemblyLine assemblyLine = new AssemblyLine();
@@ -40,6 +50,7 @@ public class ChainOfResponsibility {
             this.nextAssembler = nextAssembler;
         }
 
+        // 这里使用了模板模式，doAssemble()交由子类实现
         public void assemble() {
             boolean stop = doAssemble();
             if (!stop && nextAssembler != null) {

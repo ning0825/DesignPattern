@@ -6,7 +6,11 @@ import java.util.List;
  * 别的叫法：Subject-Observer, Publisher-Subscriber, Producer-Consumer,
  * EvenEmitter-EventListener, Dispatcher-Listener
  *
- *
+ * ## 定义
+ * 在对象之间定义一个一对多的依赖，当一个对象状态发生改变时，所有依赖的对象都会自动收到通知
+ * 
+ * ## 应用场景
+ * 当一个对象的改变需要改变其他对象
  */
 public class Observer {
     public static void main(String[] args) {

@@ -7,11 +7,10 @@ import java.util.Map;
  * 享元模式
  * 
  * ## 定义
+ * 共享多个对象所共有的相同状态，达到节省内存的目的
  * 
  * ## 应用场景
- * 
- * ## 目的
- * 复用对象，节省内存
+ * 系统中存在大量重复对象，并且是不可变对象
  */
 public class Flyweight {
     public static void main(String[] args) {
@@ -29,7 +28,7 @@ public class Flyweight {
     }
 
     /**
-     * 假设举办沃尔沃赛车比赛
+     * 假设开发一款赛车游戏，比赛中可能出现相同型号相同颜色的车
      */
     private static class VolvoCar {
         String module;
@@ -75,7 +74,8 @@ public class Flyweight {
 
         @Override
         public String toString() {
-            return "Player: {name: " + name + "car: " + car.module + car.hashCode() + "}";
+            return "Player: {name: " + name + "car: " + car.module + "_" + car.color + ", hashcode: " + car.hashCode()
+                    + "}";
         }
     }
 

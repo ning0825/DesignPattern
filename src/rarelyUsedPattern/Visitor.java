@@ -3,9 +3,15 @@ package rarelyUsedPattern;
 /**
  * 访问者模式
  * 
- * 会导致可读性，可维护性变差
+ * ## 定义
+ * 允许一个或多个操作应用在一组对象上，解耦操作和对象本身
  * 
+ * ## 应用场景
+ * 
+ * 
+ * ## 注意
  * 添加新的文件类型或处理类时，只需要添加新类继承ResourceFile或IVisitor
+ * 会导致可读性，可维护性变差
  */
 public class Visitor {
     public static void main(String[] args) {

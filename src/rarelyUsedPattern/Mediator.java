@@ -11,6 +11,9 @@ import javafx.scene.control.TextField;
  * 
  * ## 定义
  * 定义一个单独的中介对象，来处理一组对象之间的交互。将这组对象之间的交互委派给避免对象直接交互（类比负责航空管制的塔台）
+ * 
+ * ## 应用场景
+ * 一些对象和其他对象紧密耦合时，可以将对象间的关系抽取成单独的类
  */
 public class Mediator {
     public static void main(String[] args) {
