@@ -1,6 +1,8 @@
 # Design Pattern
 
-|创建型|结构型|行为型|
+
+###### *注：字体加粗表示常用设计模式*
+|创建型 &nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;|结构型&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;|行为型&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;|
 |---|---|---|
 |[**单例模式**](https://github.com/ning0825/DesignPattern/blob/master/src/Singleton.java)|[**代理模式**](https://github.com/ning0825/DesignPattern/blob/master/src/Proxy.java)|[**观察者模式**](https://github.com/ning0825/DesignPattern/blob/master/src/Observer.java)|
 |[**简单工厂**](https://github.com/ning0825/DesignPattern/blob/master/src/SimpleFactory.java)|[**桥接模式**](https://github.com/ning0825/DesignPattern/blob/master/src/Bridge.java)|[**模板方法**](https://github.com/ning0825/DesignPattern/blob/master/src/Observer.java)|
@@ -14,8 +16,4 @@
 | | |[解释器模式](https://github.com/ning0825/DesignPattern/blob/master/src/Interpreter.java)|
 | | |[中介模式](https://github.com/ning0825/DesignPattern/blob/master/src/Mediator.java)|
 
-<style>
-  table th:first-of-type{
-      width: 100px;
-  }
-</style>
+
