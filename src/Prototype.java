@@ -1,4 +1,3 @@
-package rarelyUsedPattern;
 
 /**
  * 原型模式

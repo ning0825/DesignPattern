@@ -1,4 +1,3 @@
-package rarelyUsedPattern;
 
 /**
  * 门面模式

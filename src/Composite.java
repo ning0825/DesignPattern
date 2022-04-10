@@ -1,4 +1,3 @@
-package rarelyUsedPattern;
 
 import java.util.ArrayList;
 import java.util.Arrays;

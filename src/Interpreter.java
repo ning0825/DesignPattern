@@ -1,4 +1,3 @@
-package rarelyUsedPattern;
 
 import java.util.Deque;
 import java.util.LinkedList;

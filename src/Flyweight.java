@@ -1,4 +1,3 @@
-package rarelyUsedPattern;
 
 import java.util.HashMap;
 import java.util.Map;
